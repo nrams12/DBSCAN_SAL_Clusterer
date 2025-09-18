@@ -1,9 +1,7 @@
-%% Neal Ramseier 11.27.24 
-%NND calculation was borrowed from a peice of code written by Jesse Anderson. 
-%This code uses overlap from a code written for the publication with the following DOI: 10.1016/j.bpj.2024.03.029
-%This code inputs the X and Y coordinates from ThunderSTORM reconstruction and clusters the data using DBSCAN, then 
-%calculates the  nearest neighbor distance, maximum diameter, and area of the clusters. The values are then exported 
-% in .csv file format. 
+%% Neal Ramseier 09.18.2025 
+%This code uses the X and Y coordinates from ThunderSTORM reconstruction and clusters the data using DBSCAN. The values are then exported in .csv file format. 
+
+
 %% Close all and Import Data 
 clear variables; close all; clc; close all hidden;
 disp("Previous Data Cleared"); 
@@ -73,4 +71,5 @@ fprintf(fid, 'id,frame,x [nm],y [nm],sigma [nm],intensity [photon],offset [photo
 fclose(fid);
 writematrix(dataHoldForExport, folder+"ClusteredDataFile.csv", 'WriteMode', 'append'); % Append matrix data
 disp('All Done.');
+
 toc; %Time
