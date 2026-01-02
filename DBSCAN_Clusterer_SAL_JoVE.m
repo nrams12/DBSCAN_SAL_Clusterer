@@ -2,6 +2,8 @@
 %This code uses the X and Y coordinates from ThunderSTORM reconstruction and clusters the data using DBSCAN. The values are then exported in .csv file format. 
 
 
+
+
 %% Close all and Import Data 
 clear variables; close all; clc; close all hidden;
 disp("Previous Data Cleared"); 
@@ -71,5 +73,5 @@ fprintf(fid, 'id,frame,x [nm],y [nm],sigma [nm],intensity [photon],offset [photo
 fclose(fid);
 writematrix(dataHoldForExport, folder+"ClusteredDataFile.csv", 'WriteMode', 'append'); % Append matrix data
 disp('All Done.');
-
 toc; %Time
+
